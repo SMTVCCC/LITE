@@ -2,9 +2,40 @@ document.addEventListener('DOMContentLoaded', () => {
     // 获取页面元素
     const startChatBtn = document.getElementById('startChatBtn');
     const settingsBtn = document.getElementById('settingsBtn');
+    const welcomeVideo = document.getElementById('welcomeVideo');
     
     // 隐藏设置按钮
     settingsBtn.style.display = 'none';
+    
+    // 随机选择视频
+    if (welcomeVideo) {
+        const videos = ['RW.mov', 'RW1.mov', 'RW3.mov'];
+        const randomVideo = videos[Math.floor(Math.random() * videos.length)];
+        
+        // 创建视频源元素
+        const source = document.createElement('source');
+        source.src = randomVideo;
+        source.type = 'video/mp4';
+        
+        // 添加到视频元素
+        welcomeVideo.appendChild(source);
+        
+        // 确保视频静音
+        welcomeVideo.muted = true;
+        
+        // 添加错误处理
+        welcomeVideo.addEventListener('error', () => {
+            console.error('视频加载失败:', randomVideo);
+            // 尝试加载默认视频
+            if (randomVideo !== 'RW.mov') {
+                source.src = 'RW.mov';
+                welcomeVideo.load();
+            }
+        });
+        
+        // 加载视频
+        welcomeVideo.load();
+    }
     
     // 开始聊天按钮点击事件
     startChatBtn.addEventListener('click', () => {
