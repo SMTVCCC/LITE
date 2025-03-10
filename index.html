@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SMT-AI-LITE</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+    theme: {
+        extend: {
+            colors: {
+                primary: '#FF69B4',
+                secondary: '#00CED1'
+            },
+            borderRadius: {
+                'none': '0px',
+                'sm': '4px',
+                DEFAULT: '8px',
+                'md': '12px',
+                'lg': '16px',
+                'xl': '20px',
+                '2xl': '24px',
+                '3xl': '32px',
+                'full': '9999px',
+                'button': '20px'
+            }
+        }
+    }
+}
+</script>
+<script src="spark-api.js" defer></script>
+<script src="init-spark.js" defer></script>
+<script src="welcome.js" defer></script>
+</head>
+<body class="bg-white min-h-screen flex flex-col mx-auto">
+<nav class="bg-gradient-to-r from-pink-100 to-cyan-100 z-50">
+<div class="px-4 py-3 flex justify-between items-center max-w-4xl mx-auto">
+<span class="text-xl font-['Pacifico'] text-primary flex items-center">
+<i class="fas fa-candy-cane mr-2"></i>
+SMTAI-LITE
+</span>
+<button id="settingsBtn" class="text-pink-600 hover:text-pink-700">
+<i class="fas fa-cog"></i>
+</button>
+</div>
+</nav>
+
+<main class="flex-1 flex flex-col items-center justify-center p-6 max-w-4xl mx-auto">
+<div class="mb-10 w-full max-w-md">
+<div class="relative overflow-hidden rounded-2xl">
+<video autoplay loop muted playsinline class="w-full h-[200px] object-cover">
+  <source src="RW.mov" type="video/mp4">
+  <!-- 如果视频无法播放，显示备用图片 -->
+  <img src="RW.png" class="w-full h-[200px] object-cover" alt="banner">
+</video>
+</div>
+</div>
+
+<div class="bg-gradient-to-r from-pink-100 to-cyan-100 rounded-2xl p-6 shadow-lg border-2 border-pink-200 max-w-md w-full">
+<div class="flex items-center mb-4">
+<span class="mr-2 text-xl">🍬</span>
+<span class="text-lg font-medium text-pink-600">欢迎使用SMT-AI-LITE</span>
+</div>
+<p class="text-md text-pink-600 mb-6">我是SMT-AI-LITE，瞬间回答，超爽体验！~</p>
+
+<div class="flex justify-center mt-4">
+<button id="startChatBtn" class="px-8 py-3 bg-primary text-white text-md rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center hover:bg-pink-500 transform hover:scale-105">
+<i class="fas fa-comment-dots mr-2"></i>
+开始聊天
+</button>
+</div>
+</div>
+
+<div class="text-center mt-8 text-gray-500 text-sm">
+<p>使用SMT（L1）大模型提供强大的AI对话能力</p>
+</div>
+</main>
+
+<div class="flex justify-center items-center h-[60px] bg-gradient-to-r from-pink-50 to-cyan-50">
+<div class="flex flex-col items-center justify-center space-y-1">
+<span>🍬</span>
+<span class="text-xs text-pink-500">Lite大模型</span>
+</div>
+</div>
+</body>
+</html>
